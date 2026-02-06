@@ -1,0 +1,45 @@
+{
+  "stats": {
+    "minecraft:picked_up": {
+      "minecraft:dirt": 2,
+      "minecraft:slime_ball": 28,
+      "minecraft:turtle_helmet": 1
+    },
+    "minecraft:dropped": {
+      "minecraft:diamond_boots": 1,
+      "minecraft:diamond_chestplate": 1,
+      "minecraft:diamond_leggings": 1,
+      "minecraft:turtle_helmet": 1,
+      "minecraft:dirt": 2
+    },
+    "minecraft:killed": {
+      "minecraft:slime": 1,
+      "minecraft:creaking": 3
+    },
+    "minecraft:used": {
+      "minecraft:black_concrete": 12,
+      "minecraft:oak_sign": 1,
+      "minecraft:diamond_leggings": 1,
+      "minecraft:torch": 80,
+      "minecraft:diamond_boots": 1,
+      "minecraft:diamond_chestplate": 1
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 38300,
+      "minecraft:walk_one_cm": 13040,
+      "minecraft:leave_game": 2,
+      "minecraft:mob_kills": 5,
+      "minecraft:damage_dealt": 214,
+      "minecraft:play_time": 38300,
+      "minecraft:jump": 21,
+      "minecraft:time_since_death": 38300,
+      "minecraft:drop": 6,
+      "minecraft:sprint_one_cm": 2800,
+      "minecraft:total_world_time": 38300,
+      "minecraft:fly_one_cm": 177377,
+      "minecraft:crouch_one_cm": 1210,
+      "minecraft:sneak_time": 415
+    }
+  },
+  "DataVersion": 4671
+}

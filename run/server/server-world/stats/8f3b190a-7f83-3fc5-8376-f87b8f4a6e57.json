@@ -1,0 +1,29 @@
+{
+  "stats": {
+    "minecraft:picked_up": {
+      "minecraft:carrot": 2,
+      "minecraft:potato": 3,
+      "minecraft:wheat_seeds": 3
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 30244,
+      "minecraft:walk_one_cm": 1914,
+      "minecraft:leave_game": 1,
+      "minecraft:mob_kills": 1,
+      "minecraft:walk_under_water_one_cm": 41,
+      "minecraft:play_time": 30244,
+      "minecraft:damage_dealt": 272,
+      "minecraft:jump": 4,
+      "minecraft:time_since_death": 30244,
+      "minecraft:sprint_one_cm": 1227,
+      "minecraft:total_world_time": 30244,
+      "minecraft:fly_one_cm": 17249,
+      "minecraft:crouch_one_cm": 193,
+      "minecraft:sneak_time": 96
+    },
+    "minecraft:killed": {
+      "minecraft:zombie": 1
+    }
+  },
+  "DataVersion": 4671
+}

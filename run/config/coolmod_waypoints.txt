@@ -1,0 +1,2 @@
+singleplayer_Waypoints_minecraft:overworld|triangleriver|-258.3854461183044|68.0|-40.69999998807907
+singleplayer_Waypoints_minecraft:overworld|treenearrosebush|-348.83824720493914|81.0|53.6472299691796

@@ -1,0 +1,30 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:netherite_hoe": 39
+    },
+    "minecraft:picked_up": {
+      "minecraft:carrot": 1
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 27473,
+      "minecraft:walk_one_cm": 1066,
+      "minecraft:leave_game": 1,
+      "minecraft:mob_kills": 2,
+      "minecraft:play_time": 27473,
+      "minecraft:damage_dealt": 70,
+      "minecraft:jump": 15,
+      "minecraft:time_since_death": 27473,
+      "minecraft:sprint_one_cm": 593,
+      "minecraft:total_world_time": 27473,
+      "minecraft:fly_one_cm": 67708,
+      "minecraft:walk_on_water_one_cm": 302,
+      "minecraft:crouch_one_cm": 106,
+      "minecraft:sneak_time": 85
+    },
+    "minecraft:killed": {
+      "minecraft:slime": 2
+    }
+  },
+  "DataVersion": 4671
+}

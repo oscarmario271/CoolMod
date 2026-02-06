@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "cool_mod",
+  "version": "26.2+build4",
+  "name": "Cool Mod",
+  "description": "",
+  "authors": ["Bosha"],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/coolmod!!!"
+  },
+  "license": "All Rights Reserved",
+  "icon": "assets/coolmod/gui/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "fabric-datagen": [
+      "bosha.coolmod.client.CoolModDataGenerator"
+    ],
+    "client": [
+      "bosha.coolmod.client.CoolModClient"
+    ],
+    "main": [
+      "bosha.coolmod.CoolMod"
+    ],
+    "modmenu": [
+      "bosha.coolmod.client.ModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "cool_mod.mixins.json",
+    {
+      "config": "cool_mod.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}",
+    "cloth-config": "*"
+  }
+}

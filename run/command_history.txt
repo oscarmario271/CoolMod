@@ -1,0 +1,50 @@
+/summon minecraft:enderman
+/gamemode survival
+/gamemode survival Trixxfox
+/damage @n[type=minecraft:iron_golem] 1 minecraft:arrow by Trixxfox from Trixxfox
+/tp Trixxfox oscarmario271
+/tp Trixxfox Player623
+/damage @n[type=minecraft:enderman] 1 minecraft:arrow by Trixxfox from Trixxfox
+/damage @n[type=minecraft:enderman] 1 minecraft:cramming by Trixxfox from Trixxfox
+/tp Trixxfox Player623
+/damage @n[type=minecraft:creeper] 1 minecraft:arrow by Trixxfox from Trixxfox
+/summon minecraft:creaking#
+/summon minecraft:creaking
+/time set midnight
+/summon minecraft:creaking
+/effect give @s minecraft:invisibility infinite 255 true
+/op Trixxfox
+/summon minecraft:creaking
+/effect give Player623 minecraft:wind_charged infinite 255 true
+/summon minecraft:armor_stand
+/tellraw @s "Player623 left the game\s"
+/tellraw @s "Player623 left the game"
+/tellraw @s "Player623 left the game'"
+/tellraw @a "Player623 left the game"
+/tellraw @s "Player623 left the game\n"
+/tellraw @s "Player623 left the game\b"
+/me hi]
+/me hi
+/me hit
+/me hitt
+/tellraw @a "<Entity303> I'm watching you."
+/tellraw @a "<Entity303> Behind you."
+/tellraw @a "<Entity303> You're next."
+/deop Trixxfox
+/time set midnight
+/summon minecraft:lightning_bolt
+/time set noon
+/op Trixxfox
+/summon pig
+/tellraw @a "<Entity303> How dare you."
+/tellraw @a "<Entity303> Player623."
+/friend list
+/fabric-command-api-v2:client help
+/tp @s Trixxfox
+/tp Player247 Trixxfox
+/friend remove Trixxfox
+/friend add Trixxfox
+/tp Player160 Trixxfox
+/kill @e[type=!minecraft:player]
+/tp Player399 Trixxfox
+/tp Player150 Trixxfox

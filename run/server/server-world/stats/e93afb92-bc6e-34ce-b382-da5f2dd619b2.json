@@ -1,0 +1,25 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:ender_pearl": 12
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 7075,
+      "minecraft:walk_one_cm": 1313,
+      "minecraft:total_world_time": 7075,
+      "minecraft:leave_game": 1,
+      "minecraft:fly_one_cm": 21648,
+      "minecraft:walk_under_water_one_cm": 2790,
+      "minecraft:walk_on_water_one_cm": 320,
+      "minecraft:crouch_one_cm": 54,
+      "minecraft:sneak_time": 38,
+      "minecraft:play_time": 7075,
+      "minecraft:jump": 7,
+      "minecraft:time_since_death": 7075
+    },
+    "minecraft:picked_up": {
+      "minecraft:slime_ball": 3
+    }
+  },
+  "DataVersion": 4671
+}
