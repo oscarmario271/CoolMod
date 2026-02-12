@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "cool_mod",
-  "version": "26.2+build4",
+  "version": "${version}",
   "name": "Cool Mod",
   "description": "",
   "authors": ["Bosha"],
