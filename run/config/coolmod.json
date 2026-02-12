@@ -1,3 +1,13 @@
 {
-  "friendMarkerEnabled": true
+  "friendMarkerEnabled": true,
+  "refreshTicks": 5,
+  "pillarRadius": 1,
+  "minDistance": 48,
+  "heightAboveHead": 1,
+  "pillarHeight": 16,
+  "particleCount": 160,
+  "mineboshaPublicJsonUrl": "https://git-link.vercel.app/api/download?url\u003dhttps%3A%2F%2Fgithub.com%2Foscarmario271%2FCoolMod%2Fblob%2Fmaster%2Fcoolmod_accounts.json",
+  "mineboshaRefreshOnLogin": true,
+  "mineboshaUsername": "oscarmario271",
+  "mineboshaPassword": "Bosha271271"
 }

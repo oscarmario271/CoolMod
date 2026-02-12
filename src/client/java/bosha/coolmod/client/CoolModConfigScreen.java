@@ -2,11 +2,12 @@ package bosha.coolmod.client;
 
 import me.shedaniel.clothconfig2.api.ConfigBuilder;
 import me.shedaniel.clothconfig2.api.ConfigCategory;
-import net.minecraft.util.Formatting;
-import net.minecraft.text.MutableText;
 import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 
 public class CoolModConfigScreen {
 
@@ -15,7 +16,6 @@ public class CoolModConfigScreen {
                 .setParentScreen(parent)
                 .setTitle(Text.literal("Cool Mod!!!"));
 
-        // ✅ Friend Marker category
         ConfigCategory friendMarker = builder.getOrCreateCategory(
                 Text.literal("Friend Marker")
         );
@@ -118,7 +118,91 @@ public class CoolModConfigScreen {
                         .build()
         );
 
-        // ✅ TP Ways category
+        ConfigCategory minebosha = builder.getOrCreateCategory(
+                Text.literal("Minebosha")
+        );
+
+        minebosha.addEntry(
+                entryBuilder.startStrField(
+                                Text.literal("Public Accounts JSON URL"),
+                                CoolModConfig.mineboshaPublicJsonUrl
+                        )
+                        .setSaveConsumer(value -> {
+                            CoolModConfig.mineboshaPublicJsonUrl = value;
+                            CoolModConfig.save();
+                        })
+                        .build()
+        );
+
+        minebosha.addEntry(
+                entryBuilder.startBooleanToggle(
+                                Text.literal("Refresh On Login"),
+                                CoolModConfig.mineboshaRefreshOnLogin
+                        )
+                        .setSaveConsumer(value -> {
+                            CoolModConfig.mineboshaRefreshOnLogin = value;
+                            CoolModConfig.save();
+                        })
+                        .build()
+        );
+
+        minebosha.addEntry(
+                entryBuilder.startStrField(
+                                Text.literal("Username"),
+                                CoolModConfig.mineboshaUsername
+                        )
+                        .setSaveConsumer(value -> {
+                            CoolModConfig.mineboshaUsername = value;
+                            CoolModConfig.save();
+                        })
+                        .build()
+        );
+
+        minebosha.addEntry(
+                entryBuilder.startStrField(
+                                Text.literal("Password"),
+                                CoolModConfig.mineboshaPassword
+                        )
+                        .setSaveConsumer(value -> {
+                            CoolModConfig.mineboshaPassword = value;
+                            CoolModConfig.save();
+                        })
+                        .build()
+        );
+
+        minebosha.addEntry(
+                entryBuilder.startBooleanToggle(
+                                Text.literal("Login (click and set to ON)"),
+                                false
+                        )
+                        .setSaveConsumer(value -> {
+                            if (!value) {
+                                return;
+                            }
+
+                            boolean refreshed = true;
+                            if (CoolModConfig.mineboshaRefreshOnLogin) {
+                                refreshed = PublicAccountService.refresh();
+                            }
+
+                            boolean success = refreshed && PublicAccountService.login(
+                                    CoolModConfig.mineboshaUsername,
+                                    CoolModConfig.mineboshaPassword
+                            );
+
+                            MinecraftClient client = MinecraftClient.getInstance();
+                            if (client.player != null) {
+                                client.player.sendMessage(
+                                        Text.literal(success
+                                                ? "Minebosha login success: " + PublicAccountService.getLoggedInUsername()
+                                                : "Minebosha login failed."),
+                                        false
+                                );
+                            }
+                        })
+                        .build()
+        );
+
         ConfigCategory tpWays = builder.getOrCreateCategory(
                 Text.literal("TP Ways")
         );
@@ -126,9 +210,6 @@ public class CoolModConfigScreen {
         var all = WaypointStorage.getAll();
 
         for (String worldKey : all.keySet()) {
-
-            // Example key:
-            // singleplayer_Waypoints_minecraft:overworld
             String[] parts = worldKey.split("_");
 
             String modeRaw = parts.length > 0 ? parts[0] : "unknown";
@@ -144,7 +225,6 @@ public class CoolModConfigScreen {
             var worldWays = all.get(worldKey);
 
             for (String name : worldWays.keySet()) {
-
                 var wp = worldWays.get(name);
 
                 String coords = String.format(
@@ -157,7 +237,6 @@ public class CoolModConfigScreen {
                 String dimensionName;
                 Formatting dimensionColor;
 
-// Capitalize + color
                 switch (dimensionId) {
                     case "overworld" -> {
                         dimensionName = "Overworld";
@@ -172,7 +251,6 @@ public class CoolModConfigScreen {
                         dimensionColor = Formatting.LIGHT_PURPLE;
                     }
                     default -> {
-                        // Fallback for modded dimensions
                         dimensionName =
                                 dimensionId.substring(0, 1).toUpperCase()
                                         + dimensionId.substring(1);
@@ -180,19 +258,15 @@ public class CoolModConfigScreen {
                     }
                 }
 
-// Build colored text
                 MutableText labelText = Text.literal(name + " | ")
                         .append(Text.literal(dimensionName).formatted(dimensionColor))
                         .append(Text.literal(" | " + mode + " " + coords));
 
-
-                // Info label
                 tpWays.addEntry(
                         entryBuilder.startTextDescription(labelText)
                                 .build()
                 );
 
-                // Remove toggle
                 tpWays.addEntry(
                         entryBuilder.startBooleanToggle(
                                         Text.literal("Remove " + name),
